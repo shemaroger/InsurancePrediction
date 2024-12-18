@@ -10,7 +10,7 @@ import joblib
 
 # Task 1: Data Preparation
 # Load dataset (assuming it's in CSV format)
-df = pd.read_csv("D:\\Project\\FinalExam\\data\\insurance.csv")  # Ensure correct file path
+df = pd.read_csv("D:\\Project\\FinalExam\\data\\insurance_prediction\\insurance.csv")  # Ensure correct file path
 
 # Clean the data: Handle missing values and duplicates
 numeric_cols = df.select_dtypes(include=['float64', 'int64']).columns  # Select numerical columns
@@ -45,6 +45,9 @@ plt.show()
 # Pairplot to visualize distributions and relationships
 sns.pairplot(df, vars=['age', 'bmi', 'charges'], hue='smoker')
 plt.show()
+# 1. Summary statistics
+print("\nSummary Statistics: ")
+print(df.describe())
 
 # Task 3: Predictive Modeling
 # Define features (X) and target (y)
